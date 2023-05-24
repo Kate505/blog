@@ -924,3 +924,39 @@ Processing by ArticlesController#show as HTML
 Completed 200 OK in 12ms (Views: 6.2ms | ActiveRecord: 0.2ms | Allocations: 2129)
 
 
+Started GET "/" for 127.0.0.1 at 2023-05-24 14:16:58 -0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:5
+  Rendered articles/index.html.erb within layouts/application (Duration: 29.2ms | Allocations: 5721)
+  Rendered layout layouts/application.html.erb (Duration: 106.2ms | Allocations: 31055)
+Completed 200 OK in 146ms (Views: 118.3ms | ActiveRecord: 1.0ms | Allocations: 35283)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2023-05-24 14:17:00 -0600
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 145)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 1517)
+Completed 200 OK in 21ms (Views: 8.2ms | ActiveRecord: 0.3ms | Allocations: 4168)
+
+
+Started GET "/articles/2" for 127.0.0.1 at 2023-05-24 14:17:02 -0600
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 11)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 1381)
+Completed 200 OK in 24ms (Views: 18.6ms | ActiveRecord: 0.2ms | Allocations: 2147)
+
+
